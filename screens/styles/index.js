@@ -43,5 +43,14 @@ export default StyleSheet.create({
     borderTopRightRadius: widthToDp(10),
     borderTopLeftRadius: widthToDp(10),
     paddingVertical: heightToDp(2),
+    // borderWidth: 1,
+  },
+  tumbnail: {
+    height: heightToDp(8),
+    aspectRatio: 1,
+    borderRadius: 10,
+    // borderWidth: 2,
+    overflow: 'hidden',
+    // borderColor: '#FFFFFF',
   },
 });

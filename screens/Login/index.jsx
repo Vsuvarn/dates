@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Image,KeyboardAvoidingView} from 'react-native';
 import {Text} from 'react-native-paper';
 import LoginComponent from './components/LoginComponent'
-import Styles from '../styles';
+import Styles, { heightToDp } from '../styles';
 
 function Login() {
   return (
@@ -24,7 +24,7 @@ function Login() {
             alignItems: 'center',
             justifyContent: 'space-between',
           }}>
-             <KeyboardAvoidingView>
+             <>
           <Image
             source={require('../../assets/app_icon.png')}
             style={Styles.loginIcon}
@@ -32,12 +32,12 @@ function Login() {
           <View style={Styles.loginContainer}>
             <Text variant="titleMedium">Welcome Back!</Text>
                 <LoginComponent/>
-                <View style={{width: '100%', height:100,borderWidth:1,}}>
-
-                <Text variant="bodyMedium">Welcome Back!</Text>
+                <View style={{width: '100%',justifyContent:'center',alignItems: 'center',marginTop:heightToDp(5)}}>
+                  <Text variant="titleMedium" style={{color:'#C4C5C5'}}>Forgot Password?</Text>
+                  <Text variant="titleMedium" style={{marginTop:heightToDp(3)}}>Don't have account? <Text variant="titleMedium" style={{color:'#F5BB01'}}>Create New</Text></Text>
                 </View>
           </View>
-           </KeyboardAvoidingView>
+           </>
         </View>
        
       </View>

@@ -1,11 +1,17 @@
-const APIURL = '';
-const APIKEY = 'jqoamn0ivkxriw6dythfgba534x7zp1clp9e8u2s';
+import axios from "axios";
+const APIURL = 'http://www.raincoastvictoriascreenprinting.com/';
+const APIKEY = '4xrkpneu6a735ami1wbhdyo2jg08ql9xtszcvipf';
 export const apiCall = async (path, method, data, sizesCheck) => {
   console.log(
     `${APIURL}${path} path ${path} method ${method} data ${JSON.stringify(
       data,
-    )} DeviceId ${DeviceId}`,
+    )}`,
   );
+  var formData = new FormData();
+
+  formData.append('email', 'doggydates@gmail.com');
+  formData.append('password', '123');
+  formData.append('deviceToken', '123');
 
   var res = await axios({
     method: method,
@@ -15,6 +21,7 @@ export const apiCall = async (path, method, data, sizesCheck) => {
       'Content-Type': 'application/json',
       Apikey: APIKEY,
     },
+    data: formData,
   })
     .then(response => {
       console.log('API Response', response);
