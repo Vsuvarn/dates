@@ -12,7 +12,7 @@ export const apiCall = async (path, method, data, sizesCheck) => {
   formData.append('email', 'doggydates@gmail.com');
   formData.append('password', '123');
   formData.append('deviceToken', '123');
-
+  const data = formData;
   var res = await axios({
     method: method,
     url: `${APIURL}${path}`,
@@ -21,7 +21,7 @@ export const apiCall = async (path, method, data, sizesCheck) => {
       'Content-Type': 'application/json',
       Apikey: APIKEY,
     },
-    data: formData,
+    data: data,
   })
     .then(response => {
       console.log('API Response', response);

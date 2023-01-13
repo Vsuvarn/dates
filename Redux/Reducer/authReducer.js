@@ -27,10 +27,11 @@ const authReducer = createSlice({
     //------------------------------- loginACTION start -------------------------
     builder.addCase(loginACTION.fulfilled, (state, action) => {
       console.log('loginACTION ', action)
-      if (action.payload.isLogin) {
-        state.usersInfo.loginIs = action.payload.isLogin;
+     
+        // state.usersInfo.loginIs = action.payload.isLogin;
+        state.usersInfo.loginIs = true;
         
-      } 
+      
     }),
       builder.addCase(loginACTION.pending, (state, action) => {
         state.usersInfo.apiMsg.status = 'pending';
