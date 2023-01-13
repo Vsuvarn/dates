@@ -29,8 +29,7 @@ const authReducer = createSlice({
       console.log('loginACTION ', action)
       if (action.payload.isLogin) {
         state.usersInfo.loginIs = action.payload.isLogin;
-        state.usersInfo.data =  action.payload.data;
-        state.usersInfo.apiMsg.status = action.payload.status;
+        
       } 
     }),
       builder.addCase(loginACTION.pending, (state, action) => {
