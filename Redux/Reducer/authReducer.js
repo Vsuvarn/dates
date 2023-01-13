@@ -2,9 +2,9 @@ import {createSlice} from '@reduxjs/toolkit';
 import {loginACTION} from '../../Redux/Actions/inedx';
 const INITIAL_STATE = {
   usersInfo: {
-    loginIs:false,
-    splash:true,
-    data:{},
+    loginIs: false,
+    splash: true,
+    data: {},
     apiMsg: {
       message: null,
       status: null,
@@ -26,23 +26,20 @@ const authReducer = createSlice({
   extraReducers: builder => {
     //------------------------------- loginACTION start -------------------------
     builder.addCase(loginACTION.fulfilled, (state, action) => {
-      console.log('loginACTION ', action)
-     
-        // state.usersInfo.loginIs = action.payload.isLogin;
-        state.usersInfo.loginIs = true;
-        
-      
+      console.log('loginACTION ', action);
+
+      // state.usersInfo.loginIs = action.payload.isLogin;
+      state.usersInfo.loginIs = true;
     }),
       builder.addCase(loginACTION.pending, (state, action) => {
         state.usersInfo.apiMsg.status = 'pending';
       }),
       builder.addCase(loginACTION.rejected, (state, action) => {
         state.usersInfo.apiMsg.status = action.payload.status;
-        
-      })
+      });
     //------------------------------- loginACTION end -------------------------
   },
 });
 
-export const {LOGINactions,SPLASHactions} = authReducer.actions;
+export const {LOGINactions, SPLASHactions} = authReducer.actions;
 export default authReducer.reducer;
